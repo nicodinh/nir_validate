@@ -34,7 +34,7 @@ function clean(nirpp) {
     .replace(/\s+/g, '');
 }
 
-function validate(input, options = {}) {
+export function validate(input, options = {}) {
   const { shoudClean } = options;
   const cleanedInput = shoudClean === false ? input : clean(input);
   const key = cleanedInput.slice(-2);
@@ -43,5 +43,3 @@ function validate(input, options = {}) {
 
   return computedKey == key;
 }
-
-module.exports = validate;
